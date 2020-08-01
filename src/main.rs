@@ -7,6 +7,7 @@ async fn greet(req: HttpRequest) -> impl Responder {
 
 #[actix_rt::main]
 async fn main() -> std::io::Result<()> {
+    println!("starting server on 8080");
     HttpServer::new(|| {
         App::new()
             .route("/", web::get().to(greet))
